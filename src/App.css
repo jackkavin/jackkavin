@@ -1,0 +1,31 @@
+.Container{
+  color: aliceblue;
+}
+
+body{
+  background: #000 url('img/bg.jpg')
+}
+
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search{
+  height: 100px;
+}
+
+input[type='text'] {
+  display: block;
+  width: 60%;
+  margin: auto;
+  padding: 10px;
+  outline: none;
+}
+
+.cards{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
