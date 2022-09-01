@@ -1,19 +1,20 @@
 import React from 'react'
 
-const CharacterItem = () => {
+const CharacterItem = ( {item} ) => {
+  
   return (
     <div className='card'>
         <div className='card-inner'>
             <div className='card-front'>
-
+               <img src={item.img} alt='image' />
             </div>
             <div className='card-back'>
-                <h1>Name</h1>
+                <h1>{item.name}</h1>
                 <ul>
-                    <li>Actor name</li>
-                    <li>Nick name</li>
-                    <li>Birth</li>
-                    <li>status</li>
+                    <li><strong>Actor name:</strong> {item.name}</li>
+                    <li><strong>Nick name:</strong> {item.nickname}</li>
+                    <li><strong>Birth:</strong> {item.birthday}</li>
+                    <li><strong>status:</strong> {item.status}</li>
                 </ul>
 
             </div>
