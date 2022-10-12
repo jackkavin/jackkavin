@@ -1,9 +1,13 @@
 import './App.css';
 import axios from 'axios'
 import Header from '../src/components/ui/Header'
-import Search from './components/ui/Search';
-import CharacterGrid from './components/characters/CharacterGrid';
+// import Search from './components/ui/Search';
+import Navbar from './components/ui/Navbar';
+// import CharacterGrid from './components/characters/CharacterGrid';
 import { useEffect, useState } from 'react';
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
+import Home from './components/ui/Home';
+import Charlist from './components/ui/Charlist';
 
 
 
@@ -28,9 +32,17 @@ const  App = () => {
 
   return (
     <div className="Container">
-       <Header />
-       <Search getQuery={(q) => setQuery(q)} />
-       <CharacterGrid isLoading={isLoading} items={items} />
+    <Router>
+      <Navbar />
+      <Header />
+      {/* <Home/> */}
+      <Routes>
+      <Route path='/home' element={<Home />} />
+      <Route path='/char' element={<Charlist items={items} isLoading={isLoading} setQuery={setQuery}/>} />
+      </Routes>
+      
+      {/* <Search getQuery={(q) => setQuery(q)} /> */}
+    </Router>
     </div>
   );
 }
